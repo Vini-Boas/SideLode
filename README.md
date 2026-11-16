@@ -18,13 +18,13 @@
 
 ## Downloading
 
-Download the [latest release](https://github.com/Vini-Boas/UltimMC/releases/latest) for your system:
+Download the [latest release](https://github.com/Vini-Boas/SideLode/releases/latest) for your system:
 
-- *[Windows \(32-bit, also runs on 64-bit Windows\)](https://github.com/Vini-Boas/UltimMC/releases/latest/download/sidelode-win32.zip)*.
+- *[Windows \(32-bit, also runs on 64-bit Windows\)](https://github.com/Vini-Boas/SideLode/releases/latest/download/sidelode-win32.zip)*.
 
-- *[Linux (64-bit)](https://github.com/Vini-Boas/UltimMC/releases/latest/download/sidelode-lin64.zip)*.
+- *[Linux (64-bit)](https://github.com/Vini-Boas/SideLode/releases/latest/download/sidelode-lin64.zip)*.
 
-- *[macOS (10.14 and newer)](https://github.com/Vini-Boas/UltimMC/releases/latest/download/sidelode-osx64.zip)*.
+- *[macOS (10.14 and newer)](https://github.com/Vini-Boas/SideLode/releases/latest/download/sidelode-osx64.zip)*.
 
 > [!NOTE]
 > In the case you're using macOS then another additional step you might need to do
@@ -32,9 +32,9 @@ Download the [latest release](https://github.com/Vini-Boas/UltimMC/releases/late
 
 ### Nightly builds
 
-If you want the newest changes before they are released, there is a [nightly build](https://github.com/Vini-Boas/UltimMC/releases/tag/nightly). It is refreshed on every change to `develop`, is not a stable release, and may be broken.
+If you want the newest changes before they are released, there is a [nightly build](https://github.com/Vini-Boas/SideLode/releases/tag/nightly). It is refreshed on every change to `develop`, is not a stable release, and may be broken.
 
-- *[Windows](https://github.com/Vini-Boas/UltimMC/releases/download/nightly/sidelode-win32.zip)*, *[Linux](https://github.com/Vini-Boas/UltimMC/releases/download/nightly/sidelode-lin64.zip)* and *[macOS](https://github.com/Vini-Boas/UltimMC/releases/download/nightly/sidelode-osx64.zip)*.
+- *[Windows](https://github.com/Vini-Boas/SideLode/releases/download/nightly/sidelode-win32.zip)*, *[Linux](https://github.com/Vini-Boas/SideLode/releases/download/nightly/sidelode-lin64.zip)* and *[macOS](https://github.com/Vini-Boas/SideLode/releases/download/nightly/sidelode-osx64.zip)*.
 
 ## Installing and Using
 

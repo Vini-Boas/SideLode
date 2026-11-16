@@ -49,11 +49,11 @@ EXIT STATUS
 
 BUGS
 ----
-<https://github.com/Vini-Boas/UltimMC/issues>
+<https://github.com/Vini-Boas/SideLode/issues>
 
 RESOURCES
 ---------
-GitHub: <https://github.com/Vini-Boas/UltimMC>
+GitHub: <https://github.com/Vini-Boas/SideLode>
 
 AUTHORS
 -------
