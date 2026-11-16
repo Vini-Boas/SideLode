@@ -1,6 +1,6 @@
 <p align="center">
 
-<img width="150" src="https://github.com/UltimMC/Launcher/assets/62727185/48d60c15-23ae-4d48-84b8-813f72db6cdd">
+<img width="150" src="branding/logo.svg">
 
 <p align="center">SideLode is a custom launcher for Minecraft which allows you to manage multiple instances and use offline ("cracked") accounts while keeping as close as possible to the original.</p>
 
