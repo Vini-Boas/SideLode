@@ -113,7 +113,7 @@ private:
     void stopLogin();
     void startLogin();
 
-    // UltimMC additions: local and Ely.by accounts, and the page for accounts this version can't use.
+    // SideLode additions: local and Ely.by accounts, and the page for accounts this version can't use.
     // Built in code so the upstream .ui file stays untouched and merges stay easy.
 private slots:
     void onAddLocalClicked();

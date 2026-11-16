@@ -2,7 +2,7 @@
 
 <img width="150" src="https://github.com/UltimMC/Launcher/assets/62727185/48d60c15-23ae-4d48-84b8-813f72db6cdd">
 
-<p align="center">UltimMC is a custom launcher for Minecraft which allows you to manage multiple instances and use offline ("cracked") accounts while keeping as close as possible to the original.</p>
+<p align="center">SideLode is a custom launcher for Minecraft which allows you to manage multiple instances and use offline ("cracked") accounts while keeping as close as possible to the original.</p>
 
 </p>
 
@@ -11,33 +11,36 @@
 > This software is provided without any warranty, so please don't contact the main
 > MultiMC developers in case anything goes wrong using this launcher. </br> </br>
 > Nonetheless, feel free to create an issue within this repository
-> in case you face an issue specific to UltimMC.
+> in case you face an issue specific to SideLode.
+>
+> **NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.**
+> SideLode is made and maintained by its own contributors, who are responsible for it; to reach them, use this repository's issue tracker.
 
 ## Downloading
 
 Download the [latest release](https://github.com/Vini-Boas/UltimMC/releases/latest) for your system:
 
-- *[Windows \(32-bit, also runs on 64-bit Windows\)](https://github.com/Vini-Boas/UltimMC/releases/latest/download/mmc-cracked-win32.zip)*.
+- *[Windows \(32-bit, also runs on 64-bit Windows\)](https://github.com/Vini-Boas/UltimMC/releases/latest/download/sidelode-win32.zip)*.
 
-- *[Linux (64-bit)](https://github.com/Vini-Boas/UltimMC/releases/latest/download/mmc-cracked-lin64.zip)*.
+- *[Linux (64-bit)](https://github.com/Vini-Boas/UltimMC/releases/latest/download/sidelode-lin64.zip)*.
 
-- *[macOS (10.14 and newer)](https://github.com/Vini-Boas/UltimMC/releases/latest/download/mmc-cracked-osx64.zip)*.
+- *[macOS (10.14 and newer)](https://github.com/Vini-Boas/UltimMC/releases/latest/download/sidelode-osx64.zip)*.
 
 > [!NOTE]
 > In the case you're using macOS then another additional step you might need to do
-> is to make `UltimMC` an executable by running the command `chmod +x UltimMC.app/Contents/MacOS/UltimMC` in the terminal.
+> is to make `SideLode` an executable by running the command `chmod +x SideLode.app/Contents/MacOS/SideLode` in the terminal.
 
 ### Nightly builds
 
 If you want the newest changes before they are released, there is a [nightly build](https://github.com/Vini-Boas/UltimMC/releases/tag/nightly). It is refreshed on every change to `develop`, is not a stable release, and may be broken.
 
-- *[Windows](https://github.com/Vini-Boas/UltimMC/releases/download/nightly/mmc-cracked-win32.zip)*, *[Linux](https://github.com/Vini-Boas/UltimMC/releases/download/nightly/mmc-cracked-lin64.zip)* and *[macOS](https://github.com/Vini-Boas/UltimMC/releases/download/nightly/mmc-cracked-osx64.zip)*.
+- *[Windows](https://github.com/Vini-Boas/UltimMC/releases/download/nightly/sidelode-win32.zip)*, *[Linux](https://github.com/Vini-Boas/UltimMC/releases/download/nightly/sidelode-lin64.zip)* and *[macOS](https://github.com/Vini-Boas/UltimMC/releases/download/nightly/sidelode-osx64.zip)*.
 
 ## Installing and Using
 
 1. Pick the correct download for your system.
 2. Uncompress it in your desired directory.
-3. Launch `UltimMC`.
+3. Launch `SideLode`.
 4. Go to account settings.
 6. A. Pick "Add Local" and you will be requested to use the username you desire, this can be anything.
 7. B. Pick "Add Ely.by" and add your Ely.by account by putting your username and password.
@@ -57,8 +60,8 @@ Local and Ely.by accounts work without it.
 
 1. Register an application in [Microsoft Entra](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app) for personal accounts, with no redirect URI and "public client flows" enabled.
 2. Give the launcher its client ID, in either of these ways:
-   - set `MSAClientID=<your client ID>` in the launcher's config file (`ultimmc.cfg`), or
-   - set the `ULTIMMC_MSA_CLIENT_ID` environment variable (it takes priority over the config file).
+   - set `MSAClientID=<your client ID>` in the launcher's config file (`sidelode.cfg`), or
+   - set the `SIDELODE_MSA_CLIENT_ID` environment variable (it takes priority over the config file; the old name `ULTIMMC_MSA_CLIENT_ID` still works).
 3. Restart the launcher.
 
 Using a client ID means you accept the [Microsoft Identity Platform Terms of Use](https://learn.microsoft.com/en-us/legal/microsoft-identity-platform/terms-of-use).

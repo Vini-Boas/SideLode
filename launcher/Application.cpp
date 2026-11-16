@@ -155,6 +155,27 @@ QString getIdealPlatform(QString currentPlatform) {
     return currentPlatform;
 }
 
+// Before the rename to SideLode, the settings file was called ultimmc.cfg. If a data folder has
+// that file but not the new one, copy it over so people keep their settings. It is a copy, not a
+// move: the old file stays as a backup, and once the new file exists this does nothing.
+void migrateLegacyConfig(const QString &folder)
+{
+    const QString current = FS::PathCombine(folder, BuildConfig.LAUNCHER_CONFIGFILE);
+    const QString legacy = FS::PathCombine(folder, "ultimmc.cfg");
+    if (QFileInfo::exists(current) || !QFileInfo::exists(legacy))
+    {
+        return;
+    }
+    if (QFile::copy(legacy, current))
+    {
+        qDebug() << "Copied the settings from" << legacy << "to" << current;
+    }
+    else
+    {
+        qWarning() << "Could not copy the settings from" << legacy << "to" << current;
+    }
+}
+
 }
 
 Application::Application(int &argc, char **argv) : QApplication(argc, argv)
@@ -368,6 +389,7 @@ Application::Application(int &argc, char **argv) : QApplication(argc, argv)
         );
         return;
     }
+    migrateLegacyConfig(dataPath);
 
     // --world and --server can't be used together
     if(!m_worldToJoin.isEmpty() && !m_serverToJoin.isEmpty())
@@ -428,6 +450,7 @@ Application::Application(int &argc, char **argv) : QApplication(argc, argv)
     // move user data to new location if on macOS and it still exists in Contents/MacOS
     QDir fi(applicationDirPath());
     QString originalData = fi.absolutePath();
+    migrateLegacyConfig(originalData);
     // if the config file exists in Contents/MacOS, then user data is still there and needs to moved
     if (QFileInfo::exists(FS::PathCombine(originalData, BuildConfig.LAUNCHER_CONFIGFILE)))
     {
@@ -1592,7 +1615,11 @@ QString Application::msaClientId() const {
     // Most specific first: the environment, then the config file, then what the build shipped with
     // (nothing, unless whoever built this launcher baked one in).
     // NOTE: qgetenv, not qEnvironmentVariable: the latter needs Qt 5.10, and we still build on 5.6.
-    const QString fromEnvironment = QString::fromLocal8Bit(qgetenv("ULTIMMC_MSA_CLIENT_ID")).trimmed();
+    // ULTIMMC_MSA_CLIENT_ID is the name from before the rename; it still works.
+    QString fromEnvironment = QString::fromLocal8Bit(qgetenv("SIDELODE_MSA_CLIENT_ID")).trimmed();
+    if (fromEnvironment.isEmpty()) {
+        fromEnvironment = QString::fromLocal8Bit(qgetenv("ULTIMMC_MSA_CLIENT_ID")).trimmed();
+    }
     if (!fromEnvironment.isEmpty()) {
         return fromEnvironment;
     }

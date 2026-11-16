@@ -155,7 +155,7 @@ endif()
 # If you don't plan to use these features of this software, you can just remove these values.
 
 # Empty on purpose: this fork doesn't ship a Microsoft client ID. Users supply their own at runtime
-# (the MSAClientID setting in the launcher's config file, or the ULTIMMC_MSA_CLIENT_ID environment
+# (the MSAClientID setting in the launcher's config file, or the SIDELODE_MSA_CLIENT_ID environment
 # variable), or a distributor can bake one in here with -DLauncher_MSA_CLIENT_ID=...
 # By using a key in your builds you accept the terms of use laid down in
 # https://docs.microsoft.com/en-us/legal/microsoft-identity-platform/terms-of-use
@@ -196,15 +196,15 @@ endif()
 
 ####################################### Branding #######################################
 
-set(Launcher_CommonName "UltimMC")
+set(Launcher_CommonName "SideLode")
 
-set(Launcher_Copyright "UltimMC Contributors")
+set(Launcher_Copyright "SideLode Contributors")
 set(Launcher_Domain "multimc.org")
 set(Launcher_Name "${Launcher_CommonName}")
 set(Launcher_DisplayName "${Launcher_CommonName} 5")
 # kept as MultiMC on purpose: this is what the fork has always sent to MultiMC's servers
 set(Launcher_UserAgent "MultiMC/5.0")
-set(Launcher_ConfigFile "ultimmc.cfg")
+set(Launcher_ConfigFile "sidelode.cfg")
 set(Launcher_Git "https://github.com/Vini-Boas/UltimMC")
 
 set(Launcher_Branding_ICNS "${PROJECT_SOURCE_DIR}/branding/${Launcher_CommonName}.icns")
@@ -257,7 +257,7 @@ if(Launcher_LAYOUT_REAL STREQUAL "mac-bundle")
     # Mac bundle settings
     set(MACOSX_BUNDLE_BUNDLE_NAME "${Launcher_Name}")
     set(MACOSX_BUNDLE_INFO_STRING "${Launcher_Name}:  Minecraft launcher and management utility.")
-    set(MACOSX_BUNDLE_GUI_IDENTIFIER "org.multimc.${Launcher_Name}")
+    set(MACOSX_BUNDLE_GUI_IDENTIFIER "io.github.vini-boas.sidelode")
     # three integers, as the App Store wants; the build part only goes up
     set(MACOSX_BUNDLE_BUNDLE_VERSION "${Launcher_VERSION_NAME}")
     set(MACOSX_BUNDLE_SHORT_VERSION_STRING "${Launcher_VERSION_NAME}")

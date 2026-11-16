@@ -40,6 +40,9 @@ QString getCreditsHtml(QStringList patrons)
     stream << "<p>Neptune<br/>BigBoyPro<br/>Vini-Boas</p>\n";
     stream << "<p>" << QObject::tr("and everyone in the <a href='%1'>project's history</a>.", "About Credits").arg(BuildConfig.LAUNCHER_GIT) << "</p>\n";
 
+    // Mojang's usage guidelines ask for this disclaimer wherever a project is described.
+    stream << "<p><b>" << QObject::tr("Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.", "About Credits") << "</b></p>\n";
+
     // MultiMC: the project this is built on. The author, maintainer and patrons below are MultiMC's.
     stream << "<hr/>\n";
     stream << "<h2>MultiMC</h2>\n";

@@ -41,7 +41,7 @@ jobs:
           cd build
           cmake \
            -DCMAKE_BUILD_TYPE=Release \
-           -DCMAKE_INSTALL_PREFIX:PATH=/home/runner/UltimMC/UltimMC \
+           -DCMAKE_INSTALL_PREFIX:PATH=/home/runner/SideLode/SideLode \
            -DLauncher_LAYOUT=lin-nodeps \
            -DLauncher_BUILD_PLATFORM=lin64 \
            $GITHUB_WORKSPACE
@@ -55,20 +55,20 @@ jobs:
         run: |
           cd build
           make test
-          cmake -E remove_directory "/home/runner/UltimMC/UltimMC"
+          cmake -E remove_directory "/home/runner/SideLode/SideLode"
 
       - name: Install
         run: |
           cd build
           make install
-          chmod +x /home/runner/UltimMC/UltimMC/UltimMC
-          chmod +x /home/runner/UltimMC/UltimMC/bin/UltimMC
+          chmod +x /home/runner/SideLode/SideLode/SideLode
+          chmod +x /home/runner/SideLode/SideLode/bin/SideLode
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@main
         with:
-          name: mmc-cracked-lin64
-          path: /home/runner/UltimMC
+          name: sidelode-lin64
+          path: /home/runner/SideLode
 
   build-windows:
     name: build-windows
@@ -156,7 +156,7 @@ jobs:
            -DCMAKE_C_COMPILER=gcc ^
            -DCMAKE_CXX_COMPILER=g++ ^
            -DCMAKE_BUILD_TYPE=Release ^
-           -DCMAKE_INSTALL_PREFIX:PATH="D:/UltimMC/UltimMC" ^
+           -DCMAKE_INSTALL_PREFIX:PATH="D:/SideLode/SideLode" ^
            -DCMAKE_PREFIX_PATH="D:\Qt\5.6.3\mingw49_32" ^
            -DQt5_DIR="D:\Qt\5.6.3\mingw49_32" ^
            -DLauncher_LAYOUT=win-bundle ^
@@ -187,7 +187,7 @@ jobs:
           set PATH=C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;%PATH%
           cd build
           mingw32-make test
-          cmake -E remove_directory "D:/UltimMC/UltimMC"
+          cmake -E remove_directory "D:/SideLode/SideLode"
 
       - name: Install
         shell: cmd
@@ -204,14 +204,14 @@ jobs:
       - name: Copy OpenSSL
         shell: cmd
         run: |
-          cp OpenSSL/ssleay32.dll D:/UltimMC/UltimMC/ssleay32.dll
-          cp OpenSSL/libeay32.dll D:/UltimMC/UltimMC/libeay32.dll
+          cp OpenSSL/ssleay32.dll D:/SideLode/SideLode/ssleay32.dll
+          cp OpenSSL/libeay32.dll D:/SideLode/SideLode/libeay32.dll
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@main
         with:
-          name: mmc-cracked-win32
-          path: "D:/UltimMC"
+          name: sidelode-win32
+          path: "D:/SideLode"
 
   build-mac:
     name: build-mac
@@ -245,7 +245,7 @@ jobs:
            -DCMAKE_C_COMPILER=/usr/bin/clang \
            -DCMAKE_CXX_COMPILER=/usr/bin/clang++ \
            -DCMAKE_BUILD_TYPE=Release \
-           -DCMAKE_INSTALL_PREFIX:PATH="/Users/runner/work/UltimMC/build/dist" \
+           -DCMAKE_INSTALL_PREFIX:PATH="/Users/runner/work/SideLode/build/dist" \
            -DCMAKE_PREFIX_PATH="$QT_ROOT_DIR" \
            -DLauncher_LAYOUT=mac-bundle \
            -DLauncher_BUILD_PLATFORM=osx64-5.15.2 \
@@ -261,19 +261,19 @@ jobs:
         run: |
           cd build
           make test
-          cmake -E remove_directory "/Users/runner/work/UltimMC/build/dist"
+          cmake -E remove_directory "/Users/runner/work/SideLode/build/dist"
 
       - name: Install
         run: |
           cd build
           make install
-          chmod +x /Users/runner/work/UltimMC/build/dist/UltimMC.app/Contents/MacOS/UltimMC
+          chmod +x /Users/runner/work/SideLode/build/dist/SideLode.app/Contents/MacOS/SideLode
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@main
         with:
-          name: mmc-cracked-osx64
-          path: /Users/runner/work/UltimMC/build/dist
+          name: sidelode-osx64
+          path: /Users/runner/work/SideLode/build/dist
 
   release:
     name: release
@@ -295,8 +295,8 @@ jobs:
       # upload-artifact drops Unix permission bits, restore them before zipping
       - name: Package
         run: |
-          chmod +x artifacts/mmc-cracked-lin64/UltimMC/UltimMC artifacts/mmc-cracked-lin64/UltimMC/bin/UltimMC
-          chmod +x artifacts/mmc-cracked-osx64/UltimMC.app/Contents/MacOS/UltimMC
+          chmod +x artifacts/sidelode-lin64/SideLode/SideLode artifacts/sidelode-lin64/SideLode/bin/SideLode
+          chmod +x artifacts/sidelode-osx64/SideLode.app/Contents/MacOS/SideLode
           mkdir dist
           for d in artifacts/*; do
             (cd "$d" && zip -qr "$GITHUB_WORKSPACE/dist/$(basename "$d").zip" .)
@@ -305,7 +305,7 @@ jobs:
 
       - name: Publish tagged release
         if: startsWith(github.ref, 'refs/tags/v')
-        run: gh release create "$GITHUB_REF_NAME" dist/*.zip --title "UltimMC $GITHUB_REF_NAME" --generate-notes
+        run: gh release create "$GITHUB_REF_NAME" dist/*.zip --title "SideLode $GITHUB_REF_NAME" --generate-notes
 
       - name: Publish nightly release
         if: github.ref == 'refs/heads/develop'

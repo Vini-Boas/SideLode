@@ -19,7 +19,7 @@ QString MicrosoftAuthProvider::unavailableReason()
     return QObject::tr(
         "Microsoft login needs a client ID, and this build doesn't include one.\n\n"
         "Register your own application in Microsoft Entra and put its client ID in the \"MSAClientID\" "
-        "setting of %1 (or in the ULTIMMC_MSA_CLIENT_ID environment variable), then restart the launcher.\n\n"
+        "setting of %1 (or in the SIDELODE_MSA_CLIENT_ID environment variable), then restart the launcher.\n\n"
         "Local and Ely.by accounts work without it."
     ).arg(BuildConfig.LAUNCHER_CONFIGFILE);
 }
