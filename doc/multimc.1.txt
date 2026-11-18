@@ -15,21 +15,21 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-UltimMC is a custom launcher for Minecraft that allows you to easily manage
+SideLode is a custom launcher for Minecraft that allows you to easily manage
 multiple installations of Minecraft at once. It also allows you to easily
 install and remove mods by simply dragging and dropping.
-Here are the current features of UltimMC.
+Here are the current features of SideLode.
 
 OPTIONS
 -------
 *-d, --dir*='DIRECTORY'::
-    Use 'DIRECTORY' as the UltimMC root.
+    Use 'DIRECTORY' as the SideLode root.
 
 *-l, --launch*='INSTANCE_ID'::
     Launch the instance specified by 'INSTANCE_ID'.
 
 *--alive*::
-    Write a small 'live.check' file after UltimMC starts.
+    Write a small 'live.check' file after SideLode starts.
 
 *-h, --help*::
     Display help text and exit.
@@ -49,11 +49,11 @@ EXIT STATUS
 
 BUGS
 ----
-<https://github.com/Vini-Boas/UltimMC/issues>
+<https://github.com/Vini-Boas/SideLode/issues>
 
 RESOURCES
 ---------
-GitHub: <https://github.com/Vini-Boas/UltimMC>
+GitHub: <https://github.com/Vini-Boas/SideLode>
 
 AUTHORS
 -------
