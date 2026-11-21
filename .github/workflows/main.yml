@@ -305,7 +305,14 @@ jobs:
 
       - name: Publish tagged release
         if: startsWith(github.ref, 'refs/tags/v')
-        run: gh release create "$GITHUB_REF_NAME" dist/*.zip --title "SideLode $GITHUB_REF_NAME" --generate-notes
+        # Publishing a release in the GitHub UI creates the tag, which starts this run, so the
+        # release may already exist. Attach the zips to it instead of failing.
+        run: |
+          if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
+            gh release upload "$GITHUB_REF_NAME" dist/*.zip --clobber
+          else
+            gh release create "$GITHUB_REF_NAME" dist/*.zip --title "SideLode $GITHUB_REF_NAME" --generate-notes
+          fi
 
       - name: Publish nightly release
         if: github.ref == 'refs/heads/develop'
